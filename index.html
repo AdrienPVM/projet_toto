@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exo3</title>
+</head>
+<body>
+
+<main>
+    <form id="formulaire" action="envoi.php">
+    	<label>Nom</label><br>
+    	<input id="nom" type="text" name=""/>
+    	<br>
+    	<label>Email</label><br>
+    	<input id="email" type="text" name=""/>
+    	<br>
+    	<label>Numero de tel</label><br>
+    	<input id="numero" type="text" name=""/>
+    	<br>
+    	<button type="submit">Envoyer</button>
+    </form>
+</main>
+
+
+
+<script type="text/javascript">
+  //submit du formulaire
+  // nom >= 4 caracteres
+  // email (type email @) -> indexOf (cherche quelque chose dans un chaine de caractere =!-1)
+  // numero de telephone (10 caractere)
+  //contour rouge qui doit apparaitre si erreur au submit
+  //contours vert si ok
+  //vérification quand on saisi les input
+
+var monForm = document.getElementById("formulaire");
+var nameInput =document.getElementById("nom");
+var emailInput =document.getElementById("email");
+
+  monForm.addEventListener("submit",function(event){
+      if(nameInput.value.length>=4){
+        alert("Envoyé fieu!");
+      }
+      else{
+        event.preventDefault();
+        alert("Nom?");
+      }
+      if(emailInput.indexOf("@")) {
+        alert("il y a un arobase");
+        console.log(emailInput);
+      }
+  });
+
+
+
+</script>
+
+</body>
+</html>
