@@ -1,11 +1,12 @@
 
-<table style="width:100%">
+<table class="container">
     <tr>
         <th>ID</th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Birthdate</th>
         <th>Email</th>
+        <th>Details</th>
     </tr>
 
     <?php foreach ($result as $key => $value) : ?>
@@ -31,6 +32,7 @@
             <?php endif; ?>
 
         <?php endforeach; ?>
+            <td><a href="student.php?id=<?php echo $value['stu_id']; ?>">Details</a></td>
         </tr>
     <?php endforeach; ?>
 
