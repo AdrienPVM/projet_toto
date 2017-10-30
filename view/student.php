@@ -1,8 +1,4 @@
-<pre>
-
-
 <?php
-
 
 $sqlStudent='SELECT *
 FROM student
@@ -21,17 +17,41 @@ $resultStudent=$pdoStatement->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultStudent as $index => $studentValue) {
     $age= date("Y") - date("Y", strtotime($studentValue['stu_birthdate']));
 
-    echo "ID => $studentValue[stu_id]<br />";
-    echo "Lastname => $studentValue[stu_lastname]<br />";
-    echo "Firstname => $studentValue[stu_firstname]<br />";
-    echo "Birthdate => $studentValue[stu_birthdate]<br />";
-    echo "Age => $age ans<br />"; //25
-    echo "Email => $studentValue[stu_email]<br />";
-    echo "Friendliness => $studentValue[stu_friendliness]<br />";
-    echo "Date of Insertion => $studentValue[stu_inserted]<br />";
-    echo "Session => $studentValue[loc_name]<br />";
-    echo "City => $studentValue[cit_name]<br />";
-    echo "Date of Update => $studentValue[stu_updated]<br />";
+    ?><section class="hero"><?php
+        ?><div class="hero-body"><?php
+            ?><table class="table container"><?php
+                ?><thead><?php
+                    ?><tr><?php
+                        ?><th>ID</th><?php
+                        ?><th>Last Name</th><?php
+                        ?><th>First Name</th><?php
+                        ?><th>Birthdate</th><?php
+                        ?><th>Age</th><?php
+                        ?><th>Email</th><?php
+                        ?><th>Friendliness</th><?php
+                        ?><th>Date of Insertion</th><?php
+                        ?><th>Session</th><?php
+                        ?><th>City</th><?php
+                        ?><th>Date of Update</th><?php
+                    ?></tr><?php
+                ?></thead><?php
+
+                ?><tr><?php
+                    ?><td><?php echo $studentValue['stu_id']; ?></td><?php
+                    ?><td><strong><?php echo $studentValue['stu_lastname']; ?></strong></td><?php
+                    ?><td><strong><?php echo $studentValue['stu_firstname']; ?></strong></td><?php
+                    ?><td><?php echo $studentValue['stu_birthdate'] ?></td><?php
+                    ?><td><?php echo $age; ?></td><?php
+                    ?><td><?php echo $studentValue['stu_email']; ?></td><?php
+                    ?><td><?php echo $studentValue['stu_friendliness']; ?></td><?php
+                    ?><td><?php echo $studentValue['stu_inserted']; ?></td><?php
+                    ?><td><?php echo $studentValue['loc_name']; ?></td><?php
+                    ?><td><?php echo $studentValue['cit_name']; ?></td><?php
+                    ?><td><?php echo $studentValue['stu_updated']; ?></td><?php
+                ?></tr><?php
+            ?></table><?php
+        ?></div><?php
+    ?></section><?php
+
 }
  ?>
-</pre>

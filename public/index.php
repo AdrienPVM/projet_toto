@@ -1,4 +1,3 @@
-salut
 <?php
 //J'inclus la config
 require __DIR__.'/../inc/config.php';
