@@ -19,6 +19,7 @@
             <ul class="menu-list">
                 <li><a href="list.php">Students</a></li>
                 <li><a href="add.php">Add Student</a></li>
+                <li><a href="upload.php">Upload</a></li>
             </ul>
             <form action="list.php" method="get">
                 <p class="control has-icons-left" style="width:80%">

@@ -15,7 +15,7 @@
     }
     echo $pdoDelete->rowCount();
 
-
-    header('Location: http://projet-toto.dev/list.php');
+    $uri=$_SERVER['REQUEST_URI'];
+    header('Location: '.$_SERVER['REQUEST_URI'].'');
     exit; //pour éviter tout problème
 ?>

@@ -116,7 +116,7 @@ if (!empty($_POST)) {
         $newCity=$_POST['city'];
 
         $sql='INSERT INTO student (stu_lastname, stu_firstname, stu_email, stu_birthdate, stu_friendliness, session_ses_id, city_cit_id)
-        VALUES (:lastname, :firstname, :email, :birthdate, :friendliness, :session, :city)
+        VALUES (:lastname, :firstname, :email, :birthdate, :friendliness, :sess, :city)
         ';
 
         $pdoStatement=$pdo->prepare($sql);
@@ -125,7 +125,7 @@ if (!empty($_POST)) {
         $pdoStatement->bindValue(':email', $newEmail, PDO::PARAM_STR);
         $pdoStatement->bindValue(':birthdate', $newBirthdate, PDO::PARAM_STR);
         $pdoStatement->bindValue(':friendliness', $newFriendliness, PDO::PARAM_INT);
-        $pdoStatement->bindValue(':session', $newSession, PDO::PARAM_INT);
+        $pdoStatement->bindValue(':sess', $newSession, PDO::PARAM_INT);
         $pdoStatement->bindValue(':city', $newCity, PDO::PARAM_INT);
 
         $exec=$pdoStatement->execute();
